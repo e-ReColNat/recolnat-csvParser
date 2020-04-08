@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="specimenPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>fr.mnhn.collections.entity.impl.Specimen</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+        	<!--<property name="eclipselink.exception-handler" value="fr.mnhn.database.eclipselink.EclipseLinkExceptionHandler" /> -->
+        	<property name="eclipselink.logging.level" value="INFO"/>
+            <!-- ENVIRONNEMENT DE PRODUCTION -->
+            <!--
+            <property name="javax.persistence.jdbc.user" value="MAPPING"/>
+            <property name="javax.persistence.jdbc.password" value="mppg2011"/>
+            -->
+            <!-- ENVIRONNEMENT DE TEST -->
+            <property name="javax.persistence.jdbc.user" value="RECOLNATEST"/>
+            <property name="javax.persistence.jdbc.password" value="essaiwp2"/>
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@cimaprod.mnhn.fr:1515/cimaprod.mnhn.fr"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+        </properties>
+    </persistence-unit>	
+</persistence>
